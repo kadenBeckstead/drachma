@@ -1,0 +1,63 @@
+<div class="content" #container fxLayout="column" fxLayoutGap="30px">
+  <div fxLayout="row" [class.mobile]="mobile.matches" class="graphs-container" fxLayoutAlign="space-around">
+
+    <mat-card [class.mobile-card]="mobile.matches" (click)="goToTop()" [routerLink]="['/investment']">
+      <div class="ribbon"></div>
+      <div class="graph" #investing></div>
+      <mat-divider></mat-divider>
+      <div class="lower-card" fxLayoutAlign="center center">
+        Rank: {{invRank}}
+      </div>
+    </mat-card>
+
+    <mat-card [class.mobile-card]="mobile.matches" (click)="goToTop()" [routerLink]="['/insurance']">
+      <div class="ribbon"></div>
+      <div class="graph" #insurance></div>
+      <mat-divider></mat-divider>
+      <div class="lower-card" fxLayoutAlign="center center">
+        Rank: {{insRank}}
+      </div>
+    </mat-card>
+
+    <mat-card [class.mobile-card]="mobile.matches" (click)="goToTop()" [routerLink]="['/tax']">
+      <div class="ribbon"></div>
+      <div class="graph" #tax></div>
+      <mat-divider></mat-divider>
+      <div class="lower-card" fxLayoutAlign="center center">
+        Rank: {{taxRank}}
+      </div>
+    </mat-card>
+
+    <mat-card [class.mobile-card]="mobile.matches" (click)="goToTop()" [routerLink]="['/home-buyer']">
+      <div class="ribbon"></div>
+      <div class="graph" #home></div>
+      <mat-divider></mat-divider>
+      <div class="lower-card" fxLayoutAlign="center center">
+        Rank: {{homeRank}}
+      </div>
+    </mat-card>
+
+  </div>
+
+    
+</div>
+
+<!-- Filter Menu -->
+<mat-menu [overlapTrigger]="false" #filter="matMenu">
+  <button mat-menu-item>
+    <mat-icon>show_chart</mat-icon>
+    <span>Investments</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>healing</mat-icon>
+    <span>Insurance</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>money_off</mat-icon>
+    <span>Taxes</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>home</mat-icon>
+    <span>Buying A Home</span>
+  </button>
+</mat-menu>

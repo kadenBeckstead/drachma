@@ -1,0 +1,8 @@
+<div fxLayoutAlign="center center" class="progress" fxLayout="column">
+        <h3>Buying a Home</h3>
+        <mat-progress-bar mode="determinate" [value]="progService.getInvestmentsCount()">
+        </mat-progress-bar>
+        <div class="text-indicator" fxLayoutAlign="end center">Progress:
+            {{14 * (progService.getHomeCount() / 100) | number : '1.0-0'}}/14</div>
+    </div>
+<progress-table page="Buying a Home" [data]="progService.home"></progress-table>

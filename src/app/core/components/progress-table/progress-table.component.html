@@ -1,0 +1,26 @@
+<mat-selection-list class="list" fxLayout="column">
+  <h3 mat-subheader>Beginner</h3>
+  <mat-divider></mat-divider>
+  <mat-list-option class="row" *ngFor="let item of data.beginner" (click)="routeToViewer(item)" [selected]="item.selected">
+    <mat-icon mat-list-icon>{{item.image}}</mat-icon>
+    <h4 mat-line>{{item.section}}</h4>
+    <p mat-line> {{item.title}} </p>
+    <mat-divider></mat-divider>
+  </mat-list-option>
+  <h3 mat-subheader>Intermediate</h3>
+  <mat-divider></mat-divider>
+  <mat-list-option class="row" *ngFor="let item of data.intermediate" (click)="routeToViewer(item)" [selected]="item.selected">
+    <mat-icon mat-list-icon>{{item.image}}</mat-icon>
+    <h4 mat-line>{{item.section}}</h4>
+    <p mat-line> {{item.title}} </p>
+    <mat-divider></mat-divider>
+  </mat-list-option>
+  <h3 mat-subheader>Advanced</h3>
+  <mat-divider></mat-divider>
+  <mat-list-option class="row" *ngFor="let item of data.advanced" (click)="routeToViewer(item)" [selected]="item.selected">
+    <mat-icon mat-list-icon>{{item.image}}</mat-icon>
+    <h4 mat-line>{{item.section}}</h4>
+    <p mat-line> {{item.title}} </p>
+    <mat-divider></mat-divider>
+  </mat-list-option>
+</mat-selection-list>

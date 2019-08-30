@@ -1,0 +1,84 @@
+<div *ngIf="isMobile.matches" fxLayout="column">
+  	<h3 class="title">{{ page }}</h3>
+	<div fxFlex="60" fxLayoutAlign="center center">
+		<iframe class="top-index" height="100%" width="90%" [src]="video()" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<h2 class="vid-title" fxLayoutAlign="center center">{{videoTitle}}</h2>
+	<mat-checkbox checked="true" labelPosition="after">Completed!</mat-checkbox>
+	<div fxLayout="row" fxLayoutAlign="start center">
+		<h2>Watch Next ...</h2>
+		<!-- <i class="filter-icon material-icons" [matMenuTriggerFor]="filter">filter_list</i> -->
+	</div>
+	<div class="other-videos">
+		<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<a [routerLink]="['/watch-video']"
+				[queryParams]="{'fileName': '_sPVwmGFAiA', 'title':'Trading 101: What is a dividend?'}">
+				<iframe width="100%" class="iframe" height="80%" src="https://www.youtube.com/embed/_sPVwmGFAiA" frameborder="0"
+					allowfullscreen></iframe>
+          		<figcaption>Trading 101: What is a dividend? (8:05)</figcaption>
+			</a>
+			<hr/>
+			<a [routerLink]="['/watch-video']" [queryParams]="{'fileName': '-PQc42Rfw0A', 'title':'Roth IRA explained'}">
+				<iframe width="100%" class="iframe" height="80%" src="https://www.youtube.com/embed/-PQc42Rfw0A" frameborder="0"
+					allowfullscreen></iframe>
+          		<figcaption>Roth IRA explained (4:03)</figcaption>
+			</a>
+			<hr/>
+			<a [routerLink]="['/watch-video']"
+				[queryParams]="{'fileName': 'xGE4a9IMZwM','title':'First Time Home Buyers Guide'}">
+				<iframe width="100%" class="iframe" height="80%" src="https://www.youtube.com/embed/xGE4a9IMZwM" frameborder="0"
+					allowfullscreen></iframe>
+          		<figcaption>First Time Home Buyers Guide (24:18)</figcaption>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div *ngIf="!isMobile.matches" fxLayout="row" class="video-player">
+	<div class="main-video" fxFlex="70" fxLayout="column">
+		<div fxFlex="60">
+			<iframe height="100%" width="100%" [src]="video()" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<h2>{{videoTitle}}</h2>
+	</div>
+	<div fxFlex="30" fxLayout="column" fxLayoutAlign="space-between">
+		<div fxLayout="row" fxLayoutAlign="start center">
+			<h2>Watch Next ...</h2><i class="filter-icon material-icons" [matMenuTriggerFor]="filter">filter_list</i>
+		</div>
+		<a [routerLink]="['/watch-video']"
+			[queryParams]="{'fileName': '_sPVwmGFAiA', 'title':'Trading 101: What is a dividend?'}">
+			<iframe width="336" class="iframe" height="252" src="https://www.youtube.com/embed/_sPVwmGFAiA" frameborder="0"
+				allowfullscreen></iframe>
+		</a>
+		<a [routerLink]="['/watch-video']" [queryParams]="{'fileName': '-PQc42Rfw0A', 'title':'Roth IRA explained'}">
+			<iframe width="336" class="iframe" height="252" src="https://www.youtube.com/embed/-PQc42Rfw0A" frameborder="0"
+				allowfullscreen></iframe>
+		</a>
+		<a [routerLink]="['/watch-video']"
+			[queryParams]="{'fileName': 'xGE4a9IMZwM','title':'First Time Home Buyers Guide'}">
+			<iframe width="336" class="iframe" height="252" src="https://www.youtube.com/embed/xGE4a9IMZwM" frameborder="0"
+				allowfullscreen></iframe>
+		</a>
+	</div>
+</div>
+
+<!-- Filter Menu -->
+<mat-menu [overlapTrigger]="false" #filter="matMenu">
+	<button mat-menu-item>
+		<mat-icon>show_chart</mat-icon>
+		<span>Investments</span>
+	</button>
+	<button mat-menu-item>
+		<mat-icon>healing</mat-icon>
+		<span>Insurance</span>
+	</button>
+	<button mat-menu-item>
+		<mat-icon>money_off</mat-icon>
+		<span>Taxes</span>
+	</button>
+	<button mat-menu-item>
+		<mat-icon>home</mat-icon>
+		<span>Buying A Home</span>
+	</button>
+</mat-menu>

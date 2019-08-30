@@ -1,0 +1,6 @@
+{
+  "appId": "com.capacitor.drachma",
+  "appName": "drachma",
+  "bundledWebRuntime": false,
+  "webDir": "dist/web-version"
+}
